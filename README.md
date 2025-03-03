@@ -15,7 +15,8 @@
 ```
 
 ![Админка](https://github.com/ZorgIVA/zabbix1/blob/main/img/1_1.jpg)
-<img src = "./img/1_1.jpg" width = 100%>
+
+<img src = "https://github.com/ZorgIVA/zabbix1/blob/main/img/1_1.jpg" width = 100%>
 =======
 
 
