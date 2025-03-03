@@ -20,6 +20,9 @@
 
 https://raw.githubusercontent.com/ZorgIVA/zabbix1/refs/heads/main/img/1_1.jpg
 
+![Админка](https://raw.githubusercontent.com/ZorgIVA/zabbix1/refs/heads/main/img/1_1.jpg
+)
+
 =======
 
 
