@@ -13,5 +13,5 @@
 Прикрепите в файл README.md скриншот авторизации в админке.
 Приложите в файл README.md текст использованных команд в GitHub.
 
+<img src = "\zabbix1\img\1_1.jpg" width = 100%>
 
-<img src = "\img\1_1.jpg" width = 100%>
