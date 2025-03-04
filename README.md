@@ -63,3 +63,25 @@ su - postgres -c 'psql --command "CREATE DATABASE zabbix OWNER zabbix;"...>>> - 
 <img src = "img\2_2.jpg" width = 100%>
 
 <img src = "img\2_3.jpg" width = 100%>
+
+commands:
+
+агент был установлен ранее на локалхост, на вторую машину:
+
+wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_6.0+ubuntu24.04_all.deb
+
+dpkg -i zabbix-release_latest_6.0+ubuntu24.04_all.deb
+
+apt update
+
+apt install zabbix-agent
+
+systemctl restart zabbix-agent
+
+systemctl enable zabbix-agent
+
+потом открыт 10050/tcp
+
+в конфиге агента второй машины прописан ip в параметре ServerActive - все заиграло.
+
+Извините за вольности)
