@@ -13,21 +13,25 @@
 Прикрепите в файл README.md скриншот авторизации в админке.
 Приложите в файл README.md текст использованных команд в GitHub.
 
-<img src = "img\1_1.jpg" width = 100%>
+<img src = "img\1.jpg" width = 100%>
 
 commands:
 
- wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_6.0+ubuntu24.04_all.deb
+$ sudo -s
 
- dpkg -i zabbix-release_latest_6.0+ubuntu24.04_all.deb
+ wwget https://repo.zabbix.com/zabbix/7.4/release/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.4+ubuntu24.04_all.deb
 
+ dpkg -i zabbix-release_latest_7.4+ubuntu24.04_all.deb
+ 
  apt update
 
- apt install zabbix-server-pgsql zabbix-frontend-php php8.3-pgsql zabbix-apache-conf zabbix-sql-scripts zabbix-agent
+apt install zabbix-server-pgsql zabbix-frontend-php php8.3-pgsql zabbix-apache-conf zabbix-sql-scripts 
  
  sudo -u postgres createuser --pwprompt zabbix
  
  sudo -u postgres createdb -O zabbix zabbix
+
+ zcat /usr/share/zabbix/sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
 
 Отредактируйте файл /etc/zabbix/zabbix_server.conf - отредактировал
 
@@ -35,13 +39,6 @@ commands:
 
  systemctl enable zabbix-server zabbix-agent apache2
 
-Все как в лекции, правда агента сразу поставил на локалхост (с офсайта Zabbix), правда ставил на Ubunta 24.04 LTS, но разницы нет - Deb.
-<<< ...su - postgres -c 'psql --command "CREATE USER zabbix WITH PASSWORD
-'\'123456789\'';"'
-и
-su - postgres -c 'psql --command "CREATE DATABASE zabbix OWNER zabbix;"...>>> - очень удобно, спасибо!
-
-<<<...sed -i 's/# DBPassword=/DBPassword=123456789/g' /etc/zabbix/zabbix_server.conf...>>> - не отработал, менял конфиг руками.
 
 # Задание 2
 Установите Zabbix Agent на два хоста.
@@ -58,19 +55,19 @@ su - postgres -c 'psql --command "CREATE DATABASE zabbix OWNER zabbix;"...>>> - 
 Приложите в файл README.md скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
 Приложите в файл README.md текст использованных команд в GitHub
 
-<img src = "img\2_1.jpg" width = 100%>
+<img src = "img\2.jpg" width = 100%>
 
-<img src = "img\2_2.jpg" width = 100%>
+<img src = "img\3.jpg" width = 100%>
 
-<img src = "img\2_3.jpg" width = 100%>
+<img src = "img\4.jpg" width = 100%>
 
 commands:
 
-агент был установлен ранее на локалхост, на вторую машину:
+агент был установлен  на локалхост и на вторую машину:
 
-wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_6.0+ubuntu24.04_all.deb
+wget https://repo.zabbix.com/zabbix/7.4/release/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.4+ubuntu24.04_all.deb
 
-dpkg -i zabbix-release_latest_6.0+ubuntu24.04_all.deb
+dpkg -i zabbix-release_latest_7.4+ubuntu24.04_all.deb
 
 apt update
 
@@ -80,8 +77,4 @@ systemctl restart zabbix-agent
 
 systemctl enable zabbix-agent
 
-потом открыт 10050/tcp
-
-в конфиге агента второй машины прописан ip в параметре ServerActive - все заиграло.
-
-Извините за вольности)
+в конфиге агента второй машины прописан ip в параметре ServerActive.
