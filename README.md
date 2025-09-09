@@ -13,7 +13,7 @@
 Прикрепите в файл README.md скриншот авторизации в админке.
 Приложите в файл README.md текст использованных команд в GitHub.
 
-<img src = "img\1.jpg" width = 100%>
+![alt text](https://github.com/Agooll007/Avetisov-8-03-hw/blob/main/img/1.png)
 
 commands:
 
@@ -55,11 +55,11 @@ apt install zabbix-server-pgsql zabbix-frontend-php php8.3-pgsql zabbix-apache-c
 Приложите в файл README.md скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
 Приложите в файл README.md текст использованных команд в GitHub
 
-<img src = "img\2.jpg" width = 100%>
+![alt text](https://github.com/Agooll007/Avetisov-8-03-hw/blob/main/img/2.png)
 
-<img src = "img\3.jpg" width = 100%>
+![alt text](https://github.com/Agooll007/Avetisov-8-03-hw/blob/main/img/3.png)
 
-<img src = "img\4.jpg" width = 100%>
+![alt text](https://github.com/Agooll007/Avetisov-8-03-hw/blob/main/img/4.png)
 
 commands:
 
